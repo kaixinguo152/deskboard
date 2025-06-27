@@ -1,9 +1,9 @@
 <template>
   <div>
     <ul>
-      <li class="plan" :class="isPlanFinished" v-for="plan in planList" :key="plan.index">
-        <input type="checkbox" :id="plan.index" v-model="isChecked" @change="finishPlan()">
-        <label :for="plan.index" >{{ plan.content }}</label>
+      <li class="plan" v-for="plan in planList" :key="plan.id">
+        <input type="checkbox" :id="plan.id" v-model="isChecked" @change="finishPlan()">
+        <label :class="isPlanFinished" :for="plan.id" >{{ plan.content }}</label>
         <p>{{isPlanFinished}}</p>
       </li>
     </ul>
@@ -16,30 +16,8 @@
 
 <script lang="ts">
 import {planList} from "../datas/planList.ts";
-import {ref,onMounted} from "vue";
 
 export default {
-  // setup() {
-  //   const isPlanFinished = ref('notFinished');
-  //
-  //   onMounted(() => {
-  //     const checkbox = document.getElementById("CheckPlan");
-  //
-  //     checkbox.addEventListener('change', function() {
-  //       if (checkbox.checked) {
-  //         console.log('复选框被选中');
-  //         isPlanFinished.value = 'isFinished';
-  //       } else {
-  //         console.log('复选框被取消选中');
-  //         isPlanFinished.value = 'notFinished';
-  //       }
-  //     });
-  //   });
-  //
-  //   return {
-  //     isPlanFinished,
-  //   };
-  // },
     data(){
       return {
         planList,
@@ -47,12 +25,13 @@ export default {
         DisplayAddPlanButton : 'isDisplayAddPlanButton',
         DisplayInput: 'notDisplayInput',
         DisplaySubmitButton : 'notDisplaySubmitButton',
+        isPlanFinished: 'notFinished',
         isChecked: false,
       }
     },
     methods:{
       finishPlan(){
-        if(isChe)
+        this.isPlanFinished = this.isChecked ? 'isFinished' : 'notFinished';
       },
       addPlan(){
         this.DisplayAddPlanButton = "notDisplayAddPlanButton";
@@ -64,8 +43,9 @@ export default {
         this.DisplayInput = 'notDisplayInput';
         this.DisplaySubmitButton = 'notDisplaySubmitButton';
 
+        const id = this.planList.length + 1;
         this.planList.push({
-          index: this.planList.length + 1,
+          id: String(id),
           content: this.inputValue,
         });
         this.inputValue = "";

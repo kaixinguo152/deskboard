@@ -1,10 +1,10 @@
 export let planList = [
   {
-    index: 1,
+    id: '1',
     content: "this is the 1st to-do plan",
   },
   {
-    index: 2,
+    id: '2',
     content: "this is the 2nd to-do plan",
   },
 ]
