@@ -1,10 +1,10 @@
 <template>
   <div>
     <ul>
+      <li style="border-bottom: 1px solid black"></li><!--补齐上边线-->
       <li class="plan" v-for="plan in planList" :key="plan.id">
-        <input type="checkbox" :id="plan.id" v-model="isChecked" @change="finishPlan()">
-        <label :class="isPlanFinished" :for="plan.id" >{{ plan.content }}</label>
-        <p>{{isPlanFinished}}</p>
+          <input type="checkbox" :id="plan.id" v-model="isChecked" @change="finishPlan()">
+          <label :class="isPlanFinished" :for="plan.id" >{{ plan.content }}</label>
       </li>
     </ul>
 
@@ -46,6 +46,7 @@ export default {
         const id = this.planList.length + 1;
         this.planList.push({
           id: String(id),
+          isFinished: false,
           content: this.inputValue,
         });
         this.inputValue = "";
@@ -60,6 +61,7 @@ ul{
   list-style: none;
   li{
     border: 1px solid black;
+    border-top: 0;
   }
 }
 .isFinished{
