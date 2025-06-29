@@ -1,15 +1,15 @@
 <template>
-  <div>
+  <div class="container">
     <AddPlan :tid="todos.length" @add-todo="addTodo"/>
-<!--    <FilterPlan />-->
+    <FilterPlan :selected="filter" @change-filter="filter = $event"/>
     <ListPlan :todos="filteredTodos"/>
   </div>
 </template>
 
 <script lang="ts">
-import AddPlan from "../components/PlanList/AddPlan.vue"
-import FilterPlan from "../components/PlanList/FilterPlan.vue";
-import ListPlan from "../components/PlanList/ListPlan.vue";
+import AddPlan from "./AddPlan.vue"
+import FilterPlan from "./FilterPlan.vue";
+import ListPlan from "./ListPlan.vue";
 import {ref,computed} from "vue";
 
 export default {
@@ -28,7 +28,7 @@ export default {
       switch (filter.value) {
         case "done":
           return todos.value.filter((todo) => todo.completed);
-        case "todo:":
+        case "todo":
           return todos.value.filter((todo) => !todo.completed);
         default:
           return todos.value;
@@ -45,3 +45,12 @@ export default {
 }
 
 </script>
+
+<style scoped>
+.container{
+  width: 250px;
+  height: 800px;
+  border: 1px solid black;
+  background-color: antiquewhite;
+}
+</style>

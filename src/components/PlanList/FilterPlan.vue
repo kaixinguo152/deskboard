@@ -1,14 +1,21 @@
 <template>
-  <div>
-    <span v-for="filter in filters" :key="filter.value" class="filter">
-      {{filter.label}}
-    </span>
+  <div class="filters">
+    <div
+        v-for="filter in filters"
+        :key="filter.value"
+        @click="$emit('change-filter',filter.value)"
+        class="filter"
+        :class="{ active: selected === filter.value }"
+    >
+      <span> {{filter.label}} </span>
+    </div>
   </div>
 </template>
 
-<script>
+<script lang="js">
 export default {
   name: "FilterPlan",
+  props:["selected"],
   setup(){
     const filters = [
       {
@@ -30,3 +37,27 @@ export default {
   }
 }
 </script>
+
+<style>
+
+.filters {
+  height: 42px;
+  border: 1px solid blue;
+}
+
+.filters .filter{
+  width: 70px;
+  height: 30px;
+  margin: 5px;
+  background-color: #eee;
+  float: left;
+  border: 1px solid black;
+  border-radius: 20px;
+  align-content: center;
+  text-align: center;
+  cursor: pointer;
+  &.active{
+    background-color: green;
+  }
+}
+</style>

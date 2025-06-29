@@ -1,9 +1,15 @@
 <template>
   <div class="input-add">
-      <input type="text" name="todo" v-model.lazy="todoContent" @keyup.enter="emitAddTodo"/>
-      <button @click="emitAddTodo">
+      <input
+        type="text"
+        name="todo"
+        v-model.lazy="todoContent"
+        @keyup.enter="emitAddTodo"
+        class="input-box"
+      />
+      <button @click="emitAddTodo" class="add-button">
         <i class="add-todo">
-          add todo.
+          Add
         </i>
       </button>
   </div>
@@ -39,3 +45,18 @@ export default {
 };
 </script>
 
+<style scoped>
+.input-add {
+  border: 1px solid red;
+}
+
+.input-box{
+  width: 184px;
+  border-radius: 10px;
+}
+
+.add-button{
+  width: 60px;
+  border-radius: 10px;
+}
+</style>

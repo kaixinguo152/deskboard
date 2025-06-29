@@ -10,15 +10,15 @@
       </li>
       <li>
         <router-link to="/">
-          <div class="Homeview">
+          <div class="HomeView">
             <span>HomeView</span>
           </div>
         </router-link>
       </li>
       <li>
-        <router-link to="/planlist">
-          <div class="PlanList">
-            <span>PlanList</span>
+        <router-link to="/todolist">
+          <div class="TodoList">
+            <span>TodoList</span>
           </div>
         </router-link>
       </li>
@@ -41,16 +41,13 @@ ul {
   width: 100%;
   position: absolute;
   top: 0;
-  .Homeview,
-  .PlanList,
+  .HomeView,
+  .TodoList,
   .CaiNiao {
     width: 200px;
     height: 30px;
     margin: 10px;
     background-color: antiquewhite;
-    // position: relative;
-    // top: 0;
-    // left: 0;
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
     text-align: center;
     span {

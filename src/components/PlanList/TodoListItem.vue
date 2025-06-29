@@ -19,6 +19,10 @@ export default {
 </script>
 
 <style scoped>
+.todo-item {
+  margin: 5px 5px 0;
+}
+
 .todo-item label  {
   background-color: red;
 }

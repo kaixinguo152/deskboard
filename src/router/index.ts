@@ -8,12 +8,8 @@ const router = createRouter({
       component: () => import("../views/HomeView.vue"),
     },
     {
-      path: "/plans",
-      component: () => import("../views/PlanListView.vue"),
-    },
-    {
-      path: "/planlist",
-      component: () => import("../views/PlanList.vue"),
+      path: "/todolist",
+      component: () => import("../views/TodoListView.vue"),
     },
   ],
 });
