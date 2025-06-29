@@ -52,5 +52,6 @@ export default {
   height: 800px;
   border: 1px solid black;
   background-color: antiquewhite;
+  -webkit-backdrop-filter: blur(3px);
 }
 </style>

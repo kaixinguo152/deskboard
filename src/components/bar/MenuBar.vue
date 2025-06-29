@@ -37,10 +37,11 @@ ul {
 }
 .menu {
   height: 50px;
-  background-color: #ececec;
+  background-color: rgba(0,0,0,35%);
+  backdrop-filter: blur(25px);
   width: 100%;
   position: absolute;
-  top: 0;
+  top: 10px;
   .HomeView,
   .TodoList,
   .CaiNiao {
