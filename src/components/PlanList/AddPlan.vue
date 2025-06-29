@@ -17,6 +17,9 @@ export default {
   //   AddPlan: Function,
   //   tid: Number,
   // },
+  props:{
+    tid: Number,
+  },
   setup(props,context) {
     const todoContent = ref("");
     const emitAddTodo = () => {

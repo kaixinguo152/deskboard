@@ -8,11 +8,11 @@ const router = createRouter({
       component: () => import("../views/HomeView.vue"),
     },
     {
-      path: "/planlist",
+      path: "/plans",
       component: () => import("../views/PlanListView.vue"),
     },
     {
-      path: "/plans",
+      path: "/planlist",
       component: () => import("../views/PlanList.vue"),
     },
   ],
