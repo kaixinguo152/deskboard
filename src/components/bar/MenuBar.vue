@@ -1,5 +1,5 @@
 <template>
-  <div class="menu">
+  <div class="menu-bar">
     <ul>
       <li>
         <div class="CaiNiao">
@@ -23,10 +23,14 @@
         </router-link>
       </li>
     </ul>
+
+    <div class="message"><span>What path will we take,and what kind of pesion will we be.</span></div>
+    <div class="message"><span>Developed by CodeFate</span></div>
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+</script>
 
 <style lang="less" scoped>
 ul {
@@ -35,13 +39,14 @@ ul {
     float: left;
   }
 }
-.menu {
+.menu-bar {
+  width: 100%;
   height: 50px;
   background-color: rgba(0,0,0,35%);
   backdrop-filter: blur(25px);
-  width: 100%;
   position: absolute;
-  top: 10px;
+  top: 0;
+  left: 0;
   .HomeView,
   .TodoList,
   .CaiNiao {
@@ -54,6 +59,19 @@ ul {
     span {
       line-height: 30px;
     }
+  }
+}
+
+.message{
+  height: 50px;
+  align-content: center;
+  text-align: center;
+  float: left;
+  margin: 0 30px;
+  span{
+    color: red;
+    font-size: 20px;
+    font-weight: 600;
   }
 }
 </style>
